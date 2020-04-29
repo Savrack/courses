@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список Справ</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <main class="toDoList">
+        <header class="toDoList__header">
+            <h1 class="toDoList__title">Список справ на завтра</h1>
+        </header>
+
+        <nav class="toDoList__control-panel control-panel">
+            <button class="control-panel__button" id="selectAll">Виділити все</button>
+            <button class="control-panel__button" id="deleteSelected">Видалити</button>
+            <button class="control-panel__button" id="doneSelected">Позначити як зроблене</button>
+            <button class="control-panel__button" id="openAddWindow">Додати справи</button>
+        </nav>
+        <section class="toDoList__content content" id="content">
+            <div class="content__empty" id="contentEmpty">Поки що у вас немає справ</div>
+        </section>
+    </main>
+
+    <section class="addWork" id="addWindow">
+        <div class="addWork__container">
+            <header class="addWork__header">
+                <h2 class="addWork__title">Додати До Списку</h2>
+                <button class="addWork__close" type="button" id="closeAddWindow">
+                    <span></span>
+                    <span></span>
+                </button>
+            </header>
+            <textarea id="addText" cols="30" rows="10" class="addWork__text"></textarea>
+        </div>
+
+        <button class="addWork__button" type="button" id="add">Добавити</button>
+    </section>
+</body>
+</html>

@@ -1,0 +1,72 @@
+.site-header{
+  background-color: #41228e;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  height: 500px;
+  padding-left: 10%;
+  padding-right: 10%;
+  position: relative;
+
+  background-image:
+    url(../img/svg/leaf-1.svg),
+    url(../img/svg/leaf-2.svg),
+    url(../img/svg/leaf-3.svg),
+    url(../img/svg/leaf-4.svg),
+    url(../img/svg/dots.svg),
+    url(../img/svg/leaf-6.svg),
+    url(../img/svg/leaf-7.svg);
+  background-repeat: no-repeat;
+  background-position:
+    -150px top,
+    calc(50% - 100px) 60px,
+    calc(50% + 350px) calc(100% - 120px),
+    calc(100% + 75px) top,
+    90% 80%,
+    calc(100% + 300px) -750px,
+    -300px 275px;
+
+
+  &::after{
+      content: "";
+      position: absolute;
+      bottom: -75px;
+      left: 25%;
+
+      width: 150px;
+      height: 150px;
+
+      background-image: url(../img/svg/leaf-5.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+}
+.site-logo{
+  text-decoration: none;
+
+  margin-top: 35px;
+
+  color: #ffffff;
+
+  font-family: $font-family-third;
+  font-size: 50px;
+  font-weight: 700;
+}
+.site-menu{
+  justify-content: flex-end;
+  
+  margin-top: 45px;
+}
+h1{
+  display: inline-block;
+  width: 100%;
+
+  text-align: center;
+  color: #ffffff;
+
+  font-family: $font-family-third;
+  font-size: 80px;
+  font-weight: 700;
+}

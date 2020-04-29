@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Редактор Діаграм</title>
+
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+<body class="page">
+    <header class="page__header">
+        <h1 class="page__title">Редактор Діаграм</h1>
+    </header>
+    
+    <main class="page__content">
+        <textarea class="diagrame__data" id="diagrameData" cols="30" rows="10"></textarea>
+
+        <canvas class="diagrame" width="870" height="500" id="diagrame">Оновіть будь ласка ваш браузер!</canvas>
+
+        <button class="diagrame__control" id="diagrameClearData" type="button">Скинути Дані</button>
+
+        <button class="diagrame__control" id="diagrameBarСhart" type="button">Стовпчикова Діаграма</button>
+        <button class="diagrame__control" id="diagramePieChart" type="button">Кругова Діаграма</button>
+        <button class="diagrame__control" id="diagrameFieldClear" type="button">Очистити Поле</button>
+    </main>
+</body>
+</html>

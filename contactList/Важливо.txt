@@ -1,0 +1,14 @@
+https://developer.mozilla.org/uk/docs/Web/HTTP/CORS/Errors/CORSRequestNotHttp
+
+Згідно з цією статтею у 2019 році браузери перейшли на https протокол та за одно було вроваджено зміну
+у розпізнавання фалів. Це говорить про те, що 
+file:///E:/OpenServer/OSPanel/domains/courses/contactList/index.html
+є унікальним шляхом і немає нічого спільного з:
+file:///E:/OpenServer/OSPanel/domains/courses/contactList/server/contacts.json
+
+Це було зроблено браузерами по причині CORS(Cross-Origin Resource Sharing).
+Тож тепер нові браузери обробляють не всі запроси, які надходять на сторінку.
+
+Через це мені не вдалося зробити запрос до файлу "contacts.json"
+
+Тому було зроблено імітацію отриманого json файлу.

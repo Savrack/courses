@@ -1,0 +1,407 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.container{
+    width: 1170px;
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+}
+
+.page{
+
+    // шапка
+    &__header{
+        background-color: #000000;
+
+        .container{
+            height: 100px;
+
+            align-items: center;
+            justify-content: center;
+
+        }
+    }
+    &__title{
+        height: 100%;
+
+        display: inline-flex;
+        align-items: center;
+
+        padding-left: 100px;
+
+        font-size: 32px;
+        font-weight: 600;
+
+        color: #2170A6;
+
+        background-image: url(../img/logo.svg);
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 65px;
+    }
+
+    // навігація
+    &__nav{
+        margin-top: 25px;
+    }
+
+    // тіло
+    &__city{
+        display: inline-flex;
+        align-items: center;
+
+        height: 45px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+
+        background-color: #000000;
+        color: #ffffff;
+
+        font-size: 28px;
+        font-weight: 500;
+    }
+    &__main{
+        margin-top: 25px;
+    }
+
+    // підвал
+    &__footer{
+        background-color: black;
+        padding: 25px;
+
+        height: 100px;
+
+        margin-top: 25px;
+    }
+}
+
+// мапа україни
+.map{
+    width: 1170px;
+    height: 600px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+
+    // регіон
+    &__region{
+        transition: .3s;
+        fill: black;
+
+        cursor: pointer;
+
+        &:hover + .map__city, &_active + .map__city{
+            fill: black;
+        }
+    }
+    &__city{
+        transition: .3s;
+        fill: #2170A6;
+
+        cursor: pointer;
+    }
+    &__region-city:hover &__region, &__region-city_active &__region{
+        fill: #2170A6;
+    }
+    &__region-city:hover &__city, &__region-city_active &__city{
+        fill: black;
+    }
+
+    // опис вибраного регіону
+    &__description{
+        display: none;
+        align-items: center;
+
+        position: absolute;
+        bottom: 0;
+        left: 25px;
+
+        width: 350px;
+        height: 125px;
+
+        padding: 15px;
+
+        background-color: black;
+
+        &_active{
+            display: flex;
+        }
+    }
+    &__emblem{
+        max-width: 125px;
+        max-height: 100%;
+    }
+    &__city{
+        color: white;
+
+        font-size: 28px;
+        font-weight: 600;
+
+        margin-left: 25px;
+    }
+}
+#ukraineMap{
+    width: 100%;
+    height: 100%;
+}
+
+// показ погоди
+.city-weather{
+    display: none;
+
+    &_active{
+        display: block;
+    }
+
+    &-nav{
+        flex-grow: 1;
+        height: 100%;
+
+        background-color: black;
+        border: 6px solid black;
+
+        &__list{
+            width: 100%;
+            height: 100%;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 250px;
+            list-style: none;
+        }
+        &__item{
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover{
+                background-color: #2170A6;
+            }
+
+            &_active{
+                background-color: #2170A6;
+            }
+        }
+        &__img{
+            height: 65px;
+        }
+        &__day, &__date{
+            color: white;
+
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+
+    &-content{
+        width: 100%;
+        height: 500px;
+
+        display: flex;
+
+        &__total-info{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            width: 350px;
+            height: 100%;
+
+            padding: 25px;
+
+            background-color: black;
+        }
+
+        &__temperature{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 50%;
+            height: 100px;
+
+            &_text{
+                font-size: 52px;
+                font-weight: 700;
+
+                color: white;
+
+                position: relative;
+
+                &::after{
+                    position: absolute;
+                    top: 0;
+                    right: -15px;
+                    content: "";
+
+                    display: block;
+
+                    width: 10px;
+                    height: 10px;
+
+                    border: 3px solid white;
+                    border-radius: 100%;
+                }
+            }
+        }
+
+        &__icon{
+            height: 100px;   
+        }
+
+        &__general-info{
+            &-list{
+                width: 100%;
+                height: calc(100% - 100px);
+    
+                list-style: none;
+
+                display: flex;
+                flex-direction: column;
+            }
+
+            width: 100%;
+            flex-grow: 1;
+
+            color: rgba(255, 255, 255, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+
+            font-size: 26px;
+            font-weight: 600;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__feature{
+
+            &_temperature{
+                position: relative;
+                padding-right: 10px;
+    
+                &::after{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    content: "";
+    
+                    display: block;
+    
+                    width: 5px;
+                    height: 5px;
+    
+                    border: 1px solid white;
+                    border-radius: 100%;
+                }
+            }
+            &_wind{
+                position: relative;
+                padding-right: 25px;
+    
+                &::after{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    content: "м/с";
+    
+                    width: 25px;
+                    height: 100%;
+    
+                    color: rgba(255, 255, 255, 0.7);
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            &_wind{
+                position: relative;
+                padding-right: 30px;
+    
+                &::after{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    content: "м/с";
+    
+                    width: 25px;
+                    height: 100%;
+    
+                    color: rgba(255, 255, 255, 0.7);
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            &_precip{
+                position: relative;
+                padding-right: 25px;
+    
+                &::after{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    content: "мм";
+    
+                    width: 20px;
+                    height: 100%;
+    
+                    color: rgba(255, 255, 255, 0.7);
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            &_humidity{
+                position: relative;
+                padding-right: 15px;
+    
+                &::after{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    content: "%";
+    
+                    width: 10px;
+                    height: 100%;
+    
+                    color: rgba(255, 255, 255, 0.7);
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        
+
+    }
+}

@@ -1,0 +1,240 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.container{
+    width: 1170px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    list-style: none;
+}
+
+.page{
+    background-color: lightgrey;
+
+
+    // шапка
+    &__header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100px;
+
+        background-color: black;
+    }
+    &__title{
+        font-size: 32px;
+        font-weight: 700;
+
+        text-transform: capitalize;
+
+        color: #4caf50;
+    }
+
+    // головний контент
+    &__main{
+        margin-top: 25px;
+
+        .container{
+            list-style: none;
+        }
+    }
+}
+
+// список контактів
+.contact-list{
+    // панель керування 
+    &-nav{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        height: 50px;
+
+        border-bottom: 1px solid black;
+
+        &__button{
+            width: 200px;
+            height: 100%;
+
+            margin-right: 25px;
+            padding-left: 50px;
+
+            border: none;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+
+            cursor: pointer;
+
+            background-color: inherit;
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            background-size: 30px;
+
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+
+            text-transform: capitalize;
+
+            font-size: 20px;
+
+            transition: .3s;
+
+            &_select{
+                background-image: url(../img/check.svg);
+    
+                &:hover{
+                    background-color: black;
+                    color: white;
+                    background-image: url(../img/check_hover.svg);
+                }
+            }
+            &_delete{
+                background-image: url(../img/delete.svg);
+    
+                &:hover{
+                    background-color: black;
+                    color: white;
+                    background-image: url(../img/delete_hover.svg);
+                }
+            }
+            &_add{
+                background-image: url(../img/add.svg);
+    
+                &:hover{
+                    background-color: black;
+                    color: white;
+                    background-image: url(../img/add_hover.svg);
+                }
+            }
+        }
+    }
+
+
+    &__row{
+        display: grid;
+        grid-template-columns: 50px 50px 50px 3fr 1fr 3fr 2fr;
+        grid-auto-rows: 50px;
+
+        border-bottom: 1px solid black;
+
+        &_column-name{
+            grid-template-columns: 3fr 1fr 3fr 2fr;
+
+            padding-left: 150px;
+        }
+
+        &-empty{
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 150px;
+
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+
+            font-size: 20px;
+
+            &_show{
+                display: inline-flex;
+            }
+        }
+    }
+
+    // стилізація заголовку списку та його колонок
+    &__column-name, &__text{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 18px;
+
+        border-left: 1px solid black;
+    }
+    &__text{
+        display: none;
+
+        &_show{
+            display: inline-flex;
+        }
+    }
+
+    // стилізація кнопок рядка
+    &__button{
+        height: 50px;
+        width: 100%;
+
+        border: none;
+        cursor: pointer;
+
+        background-color: inherit;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+
+        transition: .3s;
+
+        &_select{
+            background-image: url(../img/check.svg);
+
+            &:hover, &[data-select="1"]{
+                background-color: black;
+                background-image: url(../img/check_hover.svg);
+            }
+        }
+        &_delete{
+            background-image: url(../img/delete.svg);
+
+            &:hover{
+                background-color: black;
+                background-image: url(../img/delete_hover.svg);
+            }
+        }
+        &_edit{
+            background-image: url(../img/edit.svg);
+
+            &:hover, &[data-edit="1"]{
+                background-color: black;
+                background-image: url(../img/edit_hover.svg);
+            }
+        }
+
+    }
+
+    // стилізація вводу
+    &__input{
+        display: none;
+        align-items: center;
+
+        width: 100%;
+
+        padding-left: 10px;
+        padding-right: 10px;
+
+        font-size: 18px;
+        font-style: italic;
+
+        border: none;
+        border-left: 1px solid black;
+
+        &_show{
+            display: inline-flex;
+        }
+    }
+
+}

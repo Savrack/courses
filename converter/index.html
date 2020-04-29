@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер валют</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="converter">
+            <h1 class="converter__title">Конвертер валют</h1>
+
+            <div class="converter__content">
+                <p class="converter__subtitle">Віддаємо:</p>
+                <p class="converter__subtitle">Отримуємо:</p>
+
+                <button class="converter__button" type="button" id="toConverter" data-currency=""></button>
+                <button class="converter__change" type="button" id="reverseButton"></button>
+                <button class="converter__button" type="button" id="convertered" data-currency=""></button>
+
+                <p class="converter__subtitle">Скільки потрібно обміняти:</p>
+                <p class="converter__subtitle">Скільки потрібно отримати:</p>
+
+                <input type="number" class="converter__input" placeholder="0.00" id="toConverterInput">
+                <div>або</div>
+                <input type="number" class="converter__input" placeholder="0.00" id="converteredInput">
+
+                <p class="converter__result">Результат: <span id="resultSpan"></span></p>
+            </div>
+        </section>
+
+        <section class="currency" id="currencyTable" data-button-called="">
+        </section>
+    </main>
+</body>
+</html>

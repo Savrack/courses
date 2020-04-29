@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+<body class="page">
+    <header class="page__header">
+        <div class="container">
+            <h1 class="page__title">Прогноз погоди</h1>
+        </div>
+    </header>
+    <main class="page__main">
+        <section class="map">
+            <svg id="ukraineMap" viewbox="150 50 1170 875"></svg>
+            <div class="map__description" id="ukraineMapDescription">
+                <img src="" alt="емблема" class="map__emblem" id="ukraineMapCityEmblem">
+                <h2 class="map__city" id="ukraineMapCityName"></h2>
+            </div>
+        </section>
+        <section class="city-weather" id="cityWeather">
+            <div class="container">
+                <section class="city-weather-content" id="cityWeatherContent">
+                    <div class="city-weather-content__total-info">
+                        <p class="city-weather-content__temperature"><span class="city-weather-content__temperature_text" id="featureAvgTemperatureMain"></span></p>
+                        <img src="" alt="" class="city-weather-content__icon" id="featureIcon">
+                        <ul class="city-weather-content__general-info-list">
+                            <li class="city-weather-content__general-info">
+                                <span class="city-weather-content__features-name">Максимальна температура:</span>
+                                <span class="city-weather-content__features city-weather-content__feature_temperature" id="featureMaxTemperature"></span>
+                            </li>
+                            <li class="city-weather-content__general-info">
+                                <span class="city-weather-content__features-name">Мінімальна температура:</span>
+                                <span class="city-weather-content__features city-weather-content__feature_temperature" id="featureMinTemperature"></span>
+                            </li>
+                            <li class="city-weather-content__general-info">
+                                <span class="city-weather-content__features-name">Середня температура:</span>
+                                <span class="city-weather-content__features city-weather-content__feature_temperature" id="featureAvgTemperature"></span>
+                            </li>
+                            <li class="city-weather-content__general-info">
+                                <span class="city-weather-content__features-name">Вітер:</span>
+                                <span class="city-weather-content__features city-weather-content__feature_wind" id="featureSpeedWind"></span>
+                            </li>
+                            <li class="city-weather-content__general-info">
+                                <span class="city-weather-content__features-name">Кількість опадів:</span>
+                                <span class="city-weather-content__features city-weather-content__feature_precip" id="featurePrecip"></span>
+                            </li>
+                            <li class="city-weather-content__general-info">
+                                <span class="city-weather-content__features-name">Вологість:</span>
+                                <span class="city-weather-content__features city-weather-content__feature_humidity" id="featureHumidity"></span>
+                            </li>
+                            <li class="city-weather-content__general-info">
+                                <span class="city-weather-content__features-name">Захід:</span>
+                                <span class="city-weather-content__features" id="featureSunSet"></span>
+                            </li>
+                            <li class="city-weather-content__general-info">
+                                <span class="city-weather-content__features-name">Схід:</span>
+                                <span class="city-weather-content__features" id="featureSunRise"></span>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <nav class="city-weather-nav">
+                        <ul class="city-weather-nav__list" id="cityWeatherList">
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти Робітників</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+<body class="page">
+    <header class="page__header">
+        <h1 class="page__title">Список Контактів Робітників</h1>
+    </header>
+    <main class="page__main">
+        <nav class="container contact-list-nav">
+            <button class="contact-list-nav__button contact-list-nav__button_select" id="buttonSelect">виділити всі</button>
+            <button class="contact-list-nav__button contact-list-nav__button_delete" id="buttonDelete">видалити</button>
+            <button class="contact-list-nav__button contact-list-nav__button_add" id="buttonAdd" data-add="0">добавити</button>
+        </nav>
+        <ul class="container contact-list" id="contactList">
+            <li class="contact-list__row contact-list__row_column-name">
+                <p class="contact-list__column-name">ПІБ</p>
+                <p class="contact-list__column-name">Вік</p>
+                <p class="contact-list__column-name">Професія</p>
+                <p class="contact-list__column-name">Зарплата (грн)</p>
+            </li>
+            <li class="contact-list__row-empty" id="contactListEmpty">На даний момент Ваш список порожній.</li>
+        </ul>
+    </main>
+</body>
+</html>
